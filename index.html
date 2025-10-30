@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivasakti Medical Store - Your Trusted Family Chemist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #007BFF; /* A clean, trustworthy blue */
+            --secondary-color: #f8f9fa; /* Light background */
+            --text-color: #343a40; /* Dark text */
+            --light-text-color: #ffffff; /* White text */
+            --accent-color: #28a745; /* Green for health/action */
+            --font-primary: 'Poppins', sans-serif;
+            --font-secondary: 'Open Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-primary);
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light-text-color);
+            border-bottom: 3px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        }
+
+        .logo-and-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light-text-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .shop-info h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .shop-info p {
+            font-size: 0.85em;
+            color: #6c757d;
+            margin: 0;
+        }
+        
+        .visitor-count {
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-family: var(--font-primary);
+            font-weight: 600;
+            text-align: center;
+            margin-top: 10px; /* For mobile spacing */
+        }
+        
+        .visitor-count span {
+            font-size: 1.2em;
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 80px 0;
+            background-image: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.9)), url('placeholder-medical-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        #hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+            color: var(--light-text-color);
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        /* About Us */
+        #about {
+            background-color: var(--light-text-color);
+        }
+
+        /* Services */
+        #services {
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .service-cards {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--light-text-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-placeholder {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Store Images */
+        #store-pics {
+            background-color: #e9f7ff; /* Very light blue */
+            text-align: center;
+        }
+        
+        .image-gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .image-gallery-item {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            background-color: #ccc;
+            border: 5px solid var(--light-text-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Dashboard (Mock-up) */
+        #dashboard {
+            background-color: var(--light-text-color);
+        }
+        
+        .dashboard-note {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border: 1px solid #ffeeba;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .region-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .region-table th, .region-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        .region-table th {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            font-weight: 600;
+        }
+
+        .region-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .region-table .count {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Contact Us */
+        #contact {
+            background-color: var(--secondary-color);
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .map-placeholder {
+            flex: 2;
+            min-width: 300px;
+            height: 300px;
+            background-color: #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            color: #6c757d;
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+        }
+        
+        .contact-item h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.85em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .visitor-count {
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            #hero {
+                padding: 60px 0;
+            }
+
+            #hero h2 {
+                font-size: 2em;
+            }
+            
+            .service-cards {
+                flex-direction: column;
+            }
+            
+            .contact-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-and-title">
+                <div class="logo-placeholder">RX</div>
+                <div class="shop-info">
+                    <h1>Shivasakti Medical Store</h1>
+                    <p>Your Trusted Family Chemist Since 2000</p>
+                </div>
+            </div>
+            <div class="visitor-count">
+                Visitors Today: <span id="visitor-number">14,256</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Caring for Your Health, Every Day.</h2>
+            <p>Providing genuine medicines and trusted health advice to our community for over two decades.</p>
+            <a href="#contact" style="display: inline-block; padding: 10px 30px; background-color: var(--accent-color); color: var(--light-text-color); text-decoration: none; border-radius: 5px; font-weight: 600;">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2><span class="icon-placeholder">ℹ️</span> About Us</h2>
+            <p>Established in **2000**, Shivasakti Medical Store has been a cornerstone of health in our locality. Our commitment is simple: **reliable service**, **genuine products**, and **personalized care**. We believe in building a relationship of trust with every family we serve, ensuring you receive the best advice and medicines available.</p>
+            <p>Your well-being is our priority, and our experienced staff is always here to assist you with a friendly smile.</p>
+        </div>
+    </section>
+    
+    <section id="store-pics">
+        <div class="container">
+            <h2>🏪 Our Professional Store</h2>
+            <p>A glimpse into our clean, organized, and well-stocked chemist shop.</p>
+            <div class="image-gallery">
+                <div class="image-gallery-item">Placeholder: Store Exterior </div>
+                <div class="image-gallery-item">Placeholder: Medicine Aisles </div>
+                <div class="image-gallery-item">Placeholder: Consultation Counter </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>✨ Our Services</h2>
+            <p>Comprehensive health support tailored for your convenience.</p>
+            <div class="service-cards">
+                <div class="card">
+                    <div class="icon-placeholder">💊</div>
+                    <h3>Medicine Supply</h3>
+                    <p>Guaranteed supply of genuine, quality-checked prescription and over-the-counter medicines.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-placeholder">🧑‍⚕️</div>
+                    <h3>Health Consultancy</h3>
+                    <p>Friendly and informed advice from our experienced pharmacists for minor ailments and health queries.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-placeholder">🛵</div>
+                    <h3>Home Delivery</h3>
+                    <p>Fast and reliable home delivery service for essential medicines right to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard">
+        <div class="container">
+            <h2>📊 Visitor Region Dashboard (Mock Data)</h2>
+            <div class="dashboard-note">
+                **Note:** This section is a **static mock-up**. Actual visitor tracking and live geographical data require a server-side backend and database, which is outside the scope of this single HTML/CSS/JS file.
+            </div>
+            
+            <table class="region-table">
+                <thead>
+                    <tr>
+                        <th>Region of India</th>
+                        <th>Visitors (Clicks/Opens)</th>
+                        <th>Percentage of Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maharashtra</td>
+                        <td class="count">4,120</td>
+                        <td>28.9%</td>
+                    </tr>
+                    <tr>
+                        <td>Delhi-NCR</td>
+                        <td class="count">2,980</td>
+                        <td>20.9%</td>
+                    </tr>
+                    <tr>
+                        <td>Telangana/Andhra Pradesh</td>
+                        <td class="count">1,850</td>
+                        <td>13.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Karnataka</td>
+                        <td class="count">1,506</td>
+                        <td>10.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Uttar Pradesh</td>
+                        <td class="count">1,300</td>
+                        <td>9.1%</td>
+                    </tr>
+                    <tr>
+                        <td>**TOTAL (Mock)**</td>
+                        <td class="count">**14,256**</td>
+                        <td>**100%**</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>📞 Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Address</h3>
+                        <p>12A, Main Market Road, Near City Hospital, New Delhi - 110001, India</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone Number</h3>
+                        <p>+91 9438518833</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>WhatsApp Number</h3>
+                        <p><a href="https://wa.me/9194385 18833" target="_blank" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">+91 9438518833 (Click to Chat)</a></p>
+                    </div>
+                    <p>We are open 8:00 AM - 10:00 PM, seven days a week.</p>
+                </div>
+                <div class="map-placeholder">
+                    [Placeholder for Google Maps Embed]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Shivasakti Medical Store. All Rights Reserved.</p>
+            <p>Powered by –San Syndicate A1</p>
+        </div>
+    </footer>
+
+    <script>
+        // JS is mostly optional for this purely static informational site.
+        // Could be used for small animations or form validation if a form was added.
+        console.log("Shivasakti Medical Store Website Loaded.");
+    </script>
+</body>
+</html>
